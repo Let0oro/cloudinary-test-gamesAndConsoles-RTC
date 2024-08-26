@@ -28,11 +28,7 @@ This is a RESTful API built with Express.js, MongoDB, and Cloudinary for managin
    - **Installation**: `npm install multer-storage-cloudinary`
    - **Usage**: Stores uploaded files directly to Cloudinary.
 
-6. **bcrypt**: Library for hashing passwords.
-   - **Installation**: `npm install bcrypt`
-   - **Usage**: Securely stores and compares user passwords.
-
-7. **dotenv**: Module for loading environment variables.
+6. **dotenv**: Module for loading environment variables.
    - **Installation**: `npm install dotenv`
    - **Usage**: Manages configuration using environment variables.
 
@@ -43,7 +39,6 @@ This is a RESTful API built with Express.js, MongoDB, and Cloudinary for managin
 - **CRUD Operations**: Manage players and teams with full CRUD functionality.
 - **Image Upload**: Upload and manage images for players and teams using Cloudinary.
 - **MongoDB Integration**: Use MongoDB as the database to store player and team data.
-- **Authentication**: Implement basic authentication and authorization (if required).
 - **Error Handling**: Robust error handling for all routes.
 
 
@@ -54,7 +49,6 @@ This is a RESTful API built with Express.js, MongoDB, and Cloudinary for managin
 - **MongoDB & Mongoose**: NoSQL database and ODM for data management.
 - **Multer**: Middleware for handling `multipart/form-data`, which is primarily used for uploading files.
 - **Cloudinary**: Cloud service for storing and managing images.
-- **bcrypt**: Library for hashing passwords, used in user authentication.
 - **dotenv**: Module for loading environment variables from a `.env` file into `process.env`.
 
 
