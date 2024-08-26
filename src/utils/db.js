@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const generateSeed = require("../api/seeds/team.seed");
 
 async function connectDB() {
     try {
@@ -7,6 +8,7 @@ async function connectDB() {
             useUnifiedTopology: true,
         });
         console.log('Succesfully connected to DB');
+        generateSeed();
     } catch (err) {
         console.log('An error occurred while connecting to DB: '+ err);
     }

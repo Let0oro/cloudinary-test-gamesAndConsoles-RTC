@@ -6,7 +6,7 @@ const teamSchema = new mongoose.Schema(
         coach: { type: String, trim: true, required: true },
         foundedYear: { type: Number, trim: true, required: true },
         description: { type: String, trim: true, required: true },
-        logo: { type: String, trim: true, required: true },
+        logo: { type: String, trim: true, required: false },
         category: { type: String, trim: true, required: true }
     },
     {

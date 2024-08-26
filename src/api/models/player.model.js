@@ -8,7 +8,7 @@ const playerSchema = new mongoose.Schema(
         age: { type: Number, trim: true, required: true },
         jerseyNumber: { type: Number, trim: true, required: true },
         description: { type: String, trim: true, required: true },
-        profilePicture: { type: String, trim: true, required: true },
+        profilePicture: { type: String, trim: true, required: false },
     },
     {
         timestamps: true,

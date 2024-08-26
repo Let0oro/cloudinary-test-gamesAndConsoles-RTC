@@ -134,6 +134,8 @@ This API uses Cloudinary to store images. Multer handles the image upload proces
 │   ├── routes/
 │   │   ├── team.routes.js
 │   │   └── player.routes.js
+│   ├── seeds/
+│   │   └── team.seed.js
 ├── middlewares/
 │   └── files.middleware.js
 ├── utils/
