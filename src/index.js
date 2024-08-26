@@ -1,20 +1,22 @@
-const UserRoutes = require('./api/routes/user.routes.js')
-
-const { configCloudinary } = require('./middlewares/files.middleware')
-configCloudinary();
-
 const express = require('express');
-const PORT = 3000;
-
-const connectDB = require('./utils/db.js')
-connectDB();
+const { configCloudinary } = require('./middlewares/files.middleware');
+const teamRoutes = require('./api/routes/team.routes');
+const playerRoutes = require('./api/routes/player.routes');
+const connectDB = require('./utils/db.js');
+require('dotenv').config();
 
 const server = express();
+const PORT = 3000;
 
 server.use(express.json());
 server.use(express.urlencoded({extended: false}));
 
-server.use('/api/user', UserRoutes);
+connectDB();
+
+configCloudinary();
+
+server.use('/api', teamRoutes);
+server.use('/api', playerRoutes);
 
 server.use('*', (res, req, next) => {
     const err = new Error('Route not found');
@@ -23,5 +25,5 @@ server.use('*', (res, req, next) => {
 })
 
 server.listen(PORT, () => {
-    console.log('server running in https://localhost:'+PORT);
-})
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
