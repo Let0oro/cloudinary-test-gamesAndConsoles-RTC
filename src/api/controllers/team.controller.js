@@ -2,6 +2,10 @@ const Team = require('../models/team.model');
 const { deleteImgCloudinary } = require('../../middlewares/files.middleware');
 
 async function createTeam(req, res, next) {
+
+    console.log("controller")
+    console.log(req.body)
+    console.log(req.file)
     try {
         const team = new Team({
             ...req.body,

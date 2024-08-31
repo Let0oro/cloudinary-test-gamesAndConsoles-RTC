@@ -2,6 +2,13 @@ const multer = require('multer');
 const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
+const showImage = (req, res, next) => {
+    console.log("middleware")
+    console.log(req.body)
+    console.log(req.file)
+    next()
+}
+
 function saveCloudinaryStorage (folderName, formatsAllowedArr = ["jpg", "png", "jpeg", "gif"]) {
     if (!folderName || !formatsAllowedArr.length) throw new Error("Folder name or formats array is required");
     return new CloudinaryStorage({
@@ -38,4 +45,4 @@ const configCloudinary = () => {
     });
 };
 
-module.exports = { teamUpload, playerUpload, deleteImgCloudinary, configCloudinary };
+module.exports = { showImage, teamUpload, playerUpload, deleteImgCloudinary, configCloudinary };
