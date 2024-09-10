@@ -39,6 +39,10 @@ async function getPlayerById(req, res, next) {
 async function updatePlayerById(req, res, next) {
     try {
         const { id } = req.params;
+        const oldPlayer = Player.findById(id).select("profilePicture")
+        if (oldPlayer.profilePicture && (req.file || req.file.path)) {
+            deleteImgCloudinary(oldPlayer.profilePicture);
+        }
         const updatedPlayer = await Player.findByIdAndUpdate(
             id,
             { ...req.body, profilePicture: req.file ? req.file.path : 'no image' },

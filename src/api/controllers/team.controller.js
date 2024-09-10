@@ -18,7 +18,6 @@ async function createTeam(req, res, next) {
     }
 }
 
-
 async function getAllTeams(req, res, next) {
     try {
         const teams = await Team.find();
@@ -44,6 +43,10 @@ async function getTeamById(req, res, next) {
 async function updateTeamById(req, res, next) {
     try {
         const { id } = req.params;
+        const oldTeam = Team.findById(id).select("logo")
+        if (oldTeam.logo && (req.file || req.file.path)) {
+            deleteImgCloudinary(oldTeam.logo);
+        }
         const updatedTeam = await Team.findByIdAndUpdate(
             id,
             { ...req.body, logo: req.file ? req.file.path : 'no image' },
