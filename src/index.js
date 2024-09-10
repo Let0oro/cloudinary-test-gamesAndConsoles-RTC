@@ -15,8 +15,8 @@ connectDB();
 
 configCloudinary();
 
-server.use('/api', teamRoutes);
-server.use('/api', playerRoutes);
+server.use('/api/teams', teamRoutes);
+server.use('/api/players', playerRoutes);
 
 server.use('*', (res, req, next) => {
     const err = new Error('Route not found');
@@ -25,5 +25,5 @@ server.use('*', (res, req, next) => {
 })
 
 server.listen(PORT, () => {
-    console.log(`Servidor corriendo en el puerto ${PORT}`);
+    console.log(`Servidor corriendo en el puerto http://localhost:${PORT}`);
 });

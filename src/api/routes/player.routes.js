@@ -4,10 +4,10 @@ const { playerUpload } = require('../../middlewares/files.middleware');
 
 const playerRoutes = express.Router();
 
-playerRoutes.get('/players', getAllPlayers);
-playerRoutes.get('/players/:id', getPlayerById);
-playerRoutes.post('/players/new', playerUpload.single('profilePicture'), createPlayer);
-playerRoutes.put('/players/update/:id', playerUpload.single('profilePicture'), updatePlayerById);
-playerRoutes.delete('/players/delete/:id', deletePlayerById);
+playerRoutes.get('/', getAllPlayers);
+playerRoutes.get('/:id', getPlayerById);
+playerRoutes.post('/new', playerUpload.single('profilePicture'), createPlayer);
+playerRoutes.put('/update/:id', playerUpload.single('profilePicture'), updatePlayerById);
+playerRoutes.delete('/delete/:id', deletePlayerById);
 
 module.exports = playerRoutes;
